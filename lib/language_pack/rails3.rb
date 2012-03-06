@@ -35,6 +35,8 @@ private
 
   # runs the tasks for the Rails 3.1 asset pipeline
   def run_assets_precompile_rake_task
+    return
+
     log("assets_precompile") do
       setup_database_url_env
 
@@ -44,7 +46,7 @@ private
           puts "Detected manifest.yml, assuming assets were compiled locally"
         else
           ENV["RAILS_GROUPS"] ||= "assets"
-          ENV["RAILS_ENV"]    ||= "production"
+          ENV["RAILS_ENV"]    ||= "development"
 
           puts "Running: rake assets:precompile"
           rake_output = ""
