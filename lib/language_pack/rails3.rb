@@ -30,7 +30,7 @@ class LanguagePack::Rails3 < LanguagePack::Rails2
 private
 
   def plugins
-    super.concat(%w( rails3_serve_static_assets )).uniq
+    super#.concat(%w( rails3_serve_static_assets )).uniq
   end
 
   # runs the tasks for the Rails 3.1 asset pipeline
@@ -46,7 +46,7 @@ private
           puts "Detected manifest.yml, assuming assets were compiled locally"
         else
           ENV["RAILS_GROUPS"] ||= "assets"
-          ENV["RAILS_ENV"]    ||= "development"
+          ENV["RAILS_ENV"]    ||= "test"
 
           puts "Running: rake assets:precompile"
           rake_output = ""
