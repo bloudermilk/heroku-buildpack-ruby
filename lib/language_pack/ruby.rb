@@ -247,7 +247,7 @@ ERROR
   # runs bundler to install the dependencies
   def build_bundler
     log("bundle") do
-      bundle_command = "bundle install --path vendor/bundle --binstubs bin/"
+      bundle_command = "bundle install --without development --path vendor/bundle --binstubs bin/"
 
       unless File.exist?("Gemfile.lock")
         error "Gemfile.lock is required. Please run \"bundle install\" locally\nand commit your Gemfile.lock."
