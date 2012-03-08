@@ -44,7 +44,7 @@ private
   # list of plugins to be installed
   # @return [Array] resulting list in a String Array
   def plugins
-    %w( rails_log_stdout )
+    []#%w( rails_log_stdout )
   end
 
   # the root path of where the plugins are to be installed from
